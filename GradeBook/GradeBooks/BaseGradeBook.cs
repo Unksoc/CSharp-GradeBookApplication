@@ -142,16 +142,11 @@ namespace GradeBook.GradeBooks
                 case 'F':
                     return 0;
             }
-            if (studentType == StudentType.Honors || studentType == StudentType.DualEnrolled)
+            if (IsWeighted = true && (studentType == StudentType.Honors || studentType == StudentType.DualEnrolled))
             {
-                gpa += 1;
+                gpa++;
             }
-            else
-            {
-                return gpa;
-            }
-
-            return 0;
+            return gpa;
         }
 
         public virtual void CalculateStatistics()

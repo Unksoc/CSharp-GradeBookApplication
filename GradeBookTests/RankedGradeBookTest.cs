@@ -8,7 +8,7 @@ namespace GradeBookTests
         [Fact]
         public void GetLetterGrade()
         {
-            RankedGradeBook book = new RankedGradeBook("Book");
+            RankedGradeBook book = new RankedGradeBook("Book", false);
             book.AddStudent(new GradeBook.Student("John", GradeBook.Enums.StudentType.Standard, GradeBook.Enums.EnrollmentType.National));
             book.AddStudent(new GradeBook.Student("John1", GradeBook.Enums.StudentType.Standard, GradeBook.Enums.EnrollmentType.National));
             book.AddStudent(new GradeBook.Student("John2", GradeBook.Enums.StudentType.Standard, GradeBook.Enums.EnrollmentType.National));

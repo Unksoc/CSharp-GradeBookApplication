@@ -18,27 +18,27 @@ namespace GradeBook.GradeBooks
             }
             var threshold = (int)Math.Ceiling(Students.Count * .20);
             var grades = Students.OrderByDescending(e => e.AverageGrade).Select(e => e.AverageGrade).ToList();
-            switch (averageGrade)
+            if (averageGrade >= grades[threshold - 1])
             {
-                case var grade when grades[threshold - 1] <= averageGrade:
-                    return 'A';
-
-                case var grade when grades[threshold * 2 - 1] <= averageGrade:
-                    return 'B';
-
-                case var grade when grades[threshold * 3 - 1] <= averageGrade:
-                    return 'C';
-
-                case var grade when grades[threshold * 4 - 1] <= averageGrade:
-                    return 'D';
-
-                case var grade when grades[threshold * 5 - 1] <= averageGrade:
-                    return 'E';
-
-                default:
-                    return 'F';
-                    //checking F
+                return 'A';
             }
+
+            if (averageGrade >= grades[(threshold * 2) - 1])
+            {
+                return 'B';
+            }
+
+            if (averageGrade >= grades[(threshold * 3) - 1])
+            {
+                return 'C';
+            }
+
+            if (averageGrade >= grades[(threshold * 4) - 1])
+            {
+                return 'D';
+            }
+
+            return 'F';
         }
     }
 }

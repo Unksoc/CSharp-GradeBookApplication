@@ -37,6 +37,7 @@ namespace GradeBook.GradeBooks
 
                 default:
                     return 'F';
+                    //checking F
             }
         }
     }

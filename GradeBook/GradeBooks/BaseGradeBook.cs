@@ -146,6 +146,10 @@ namespace GradeBook.GradeBooks
             {
                 gpa += 1;
             }
+            else
+            {
+                return gpa;
+            }
 
             return 0;
         }

@@ -14,7 +14,7 @@ namespace GradeBook.GradeBooks
         {
             if (Students.Count < 5)
             {
-                throw new InvalidOperationException();
+                throw new InvalidOperationException("Ranked Grading requires at least 5 students");
             }
             var threshold = (int)Math.Ceiling(Students.Count * .20);
             var grades = Students.OrderByDescending(e => e.AverageGrade).Select(e => e.AverageGrade).ToList();
